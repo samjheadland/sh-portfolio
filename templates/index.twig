@@ -1,0 +1,59 @@
+{% set entry = craft.entries.slug('home').one() %}
+{% extends "pages/default" %}
+{% import '_utilities/teaser' as article %}
+{% set postQuery = craft.entries.section('workPosts').limit(2) %}
+{% paginate postQuery as pageInfo, posts %}
+
+	{% block content %}
+		<div class="container text-white mx-auto">
+			<div class="flex flex-row items-center py-20 gap-6">
+				<div class="w-7/12 grid gap-4 py-10">
+					<h1 class="font-bold text-5xl">Sam Headland</h1>
+					<h2 class="text-3xl m-0">Designer & Frontend Developer</h2>
+					<p class="fade-up-3 text-[17px] font-light text-text-muted max-w-[400px] mb-10 leading-[1.75]">Hi, I'm Sam. I design and build websites with over 7 years of experience — focused on products that genuinely make life easier for the people using them.</p>
+					<a href="" class="inline-flex">View my work</a>
+				</div>
+
+				<div class="w-5/12">
+					<img src="https://samheadland.co.uk/img/me.jpg" class="w-full rounded-3xl drop-shadow-xl">
+				</div>
+
+
+			</div>
+		</div>
+
+
+		<!-- BIO -->
+		<section class="mx-auto container grid grid-cols-[1fr_2fr] gap-12 px-12 py-20 border-t border-white/6 items-start">
+			<div class="text-[11px] font-bold tracking-[0.18em] uppercase text-accent pt-1.5">About</div>
+			<div>
+				<p class="text-[18px] font-light leading-[1.8] text-text-base/80 max-w-[600px]">
+					A
+					<strong class="text-text-base font-semibold">designer and front-end developer</strong>
+					who bridges the gap between beautiful visuals and clean, performant code. I love working with startups and established brands to build products that feel
+					<strong class="text-text-base font-semibold">effortless to use</strong>.
+				</p>
+				<div class="flex flex-wrap gap-2.5 mt-8">
+					<span class="text-xs font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">UI / UX Design</span>
+					<span class="text-xs font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">Frontend Dev</span>
+					<span class="text-xs font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">Shopify</span>
+					<span class="text-xs font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">Figma</span>
+					<span class="text-xs font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">HTML &amp; CSS</span>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="container mx-auto mb-6 px-2 ">
+			<div class="flex items-baseline justify-between mb-12">
+				<h2 class="font-extrabold text-white text-[clamp(1.8rem,3.5vw,3rem)] tracking-[-0.03em]">Work</h2>
+				<span class="text-sm font-semibold text-accent/80 hover:text-accent flex items-center gap-1.5 cursor-pointer transition-colors">All projects →</span>
+			</div>
+			<div class="grid sm:gap-6">
+				{% for post in posts %}
+					{{ article.teaser({post: post, featured: true}) }}
+				{% endfor %}
+			</div>
+			{% include '_partials/pagination' with { pageInfo: pageInfo } %}
+		</section>
+	{% endblock %}

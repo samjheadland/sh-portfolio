@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+
+
+body {
+    background: #122C38 ;
+}
+html {
+    font-family:  "Plus Jakarta Sans", sans-serif !important;
+}
+
+@theme {
+  --color-darkblue: #122C38;
+  --color-darkblue-100: #1A3A50;
+  --color-green: #5CFFC8;
+
+
+    --color-navy: #0d2233;
+    --color-navy-mid: #14304a;
+    --color-navy-card: #1a3a50;
+    --color-navy-light: #1e4060;
+    --color-accent: #4ec9a0;
+    --color-accent-coral: #f0a070;
+    --color-cream: #f5f0e8;
+    --color-cream-muted: #6b8080;
+    --color-green-dark: #1d6a50;
+    --color-text-base: #e8f0f7;
+    --color-text-muted: #8aaabb;
+    --color-shopify: #95bf47;
+  }
+
+
+
+.btn {
+    @apply py-2 px-4 inline-block border-1 rounded-xl;
+}
