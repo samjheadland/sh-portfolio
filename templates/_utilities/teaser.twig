@@ -1,27 +1,33 @@
 {% macro teaser(data) %}
 	{% set featured = data.featured ?? false %}
 	<article class="rounded-xl overflow-hidden bg-darkblue-100">
-		<div class="flex flex-row gap-4 items-center">
+		<div class="flex flex-col-reverse md:flex-row gap-4 items-center">
 
-			<div class="w-1/2 p-12">
+			<div class="w-full md:w-1/2 p-6 md:p-12">
 				<div class="flex flex-col items-start justify-center gap-4">
-					<h2 class="text-4xl font-bold">
+					<h2 class="text-2xl md:text-4xl font-bold">
 						<a href="{{ data.post.url }}" class="text-white hover:undeline focus:underline cursor-pointer">{{ data.post.title }}</a>
 					</h2>
 					<!--<p>{{ data.post.pageSubheading }}</p>-->
-					<p>
-						<time class="text-sm text-white" datetime="{{ data.post.postDate|atom }}">{{ data.post.postDate|date }}</time>
-					</p>
-					<a href="" class="text-green font-bold">View project</a>
+					
+					{% set categories = data.post.category.eagerly().all() %}
+						{% if categories %}
+							<div class="flex flex-wrap gap-2">
+								{% for category in categories %}
+									<span class="text-sm font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5 hover:border-accent/50 hover:text-accent hover:bg-accent/8 transition-all cursor-default">{{ category.title }}</span>
+								{% endfor %}
+							</div>
+						{% endif %}
+					<a href="{{ data.post.url }}" class="text-green font-bold">View project →</a>
 
 				</div>
 			</div>
 			{% if featured %}
 				{% set hero = data.post.image.eagerly().one() %}
-				<figure class="w-1/2">
+				<figure class="w-full md:w-1/2">
 					<a href="{{ data.post.url }}">
 						{% if hero %}
-							<img src="{{ hero.url('hero') }}" alt="{{ hero.alt }}" class=" h-120 object-cover overflow-hidden w-full"/>
+							<img src="{{ hero.url('hero') }}" alt="{{ hero.alt }}" class="h-56 md:h-120 object-cover overflow-hidden w-full"/>
 						{% else %}
 							<div class="bg-slate-200 hover:bg-slate-300 aspect-video"></div>
 						{% endif %}

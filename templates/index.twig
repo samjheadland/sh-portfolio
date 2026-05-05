@@ -6,16 +6,18 @@
 
 	{% block content %}
 		<div class="container text-white mx-auto">
-			<div class="flex flex-row items-center py-20 gap-6">
-				<div class="w-7/12 grid gap-4 py-10">
+			<div class="flex flex-col md:flex-row items-center py-10 gap-6">
+				<div class="w-12/12 md:w-7/12 grid gap-4 py-10">
 					<h1 class="font-bold text-5xl">Sam Headland</h1>
 					<h2 class="text-3xl m-0">Designer & Frontend Developer</h2>
-					<p class="fade-up-3 text-[17px] font-light text-text-muted max-w-[400px] mb-10 leading-[1.75]">Hi, I'm Sam. I design and build websites with over 7 years of experience — focused on products that genuinely make life easier for the people using them.</p>
-					<a href="" class="inline-flex">View my work</a>
+					<p class="fade-up-3 text-[17px] font-light text-text-muted leading-[1.75]">Hi, I'm Sam. I design and build websites with over 7 years of experience — focused on products that genuinely make life easier for the people using them.</p>
+					<div class="flex gap-4">
+						<a href="" class="inline-flex items-center gap-2 px-7 py-3 bg-accent text-navy rounded-full font-semibold text-sm hover:-translate-y-0.5 hover:shadow-[0_8px_24px_color-mix(in_srgb,#4ec9a0_25%,transparent)] transition-all no-underline">View my work</a>
+					</div>
 				</div>
 
-				<div class="w-5/12">
-					<img src="https://samheadland.co.uk/img/me.jpg" class="w-full rounded-3xl drop-shadow-xl">
+				<div class="w-12/12 md:w-5/12">
+					<img src="/me.png" class="w-full rounded-3xl drop-shadow-xl">
 				</div>
 
 
@@ -24,7 +26,7 @@
 
 
 		<!-- BIO -->
-		<section class="mx-auto container grid grid-cols-[1fr_2fr] gap-12  py-20 border-t border-white/6 items-start">
+		<section id="about" class="mx-auto container grid grid-cols-[1fr_2fr] gap-12  py-20 border-t border-white/6 items-start">
 			<div class="text-[11px] font-bold tracking-[0.18em] uppercase text-accent pt-1.5">About</div>
 			<div>
 				<p class="text-[18px] font-light leading-[1.8] text-text-base/80 max-w-[600px]">
@@ -44,7 +46,7 @@
 		</section>
 
 
-		<section class="container mx-auto mb-6 px-2 ">
+		<section id="work" class="container mx-auto mb-6 px-2 ">
 			<div class="flex items-baseline justify-between mb-12">
 				<h2 class="font-extrabold text-white text-[clamp(1.8rem,3.5vw,3rem)] tracking-[-0.03em]">Work</h2>
 				<span class="text-sm font-semibold text-accent/80 hover:text-accent flex items-center gap-1.5 cursor-pointer transition-colors">All projects →</span>

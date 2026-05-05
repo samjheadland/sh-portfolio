@@ -1,11 +1,13 @@
   {% set pages = craft.entries.section('pages').level(1).all() %}
   <nav class="sm:tw-basis-2/3 grow-1" aria-label="Primary">
-    <ul class="sm:flex font-bold">
-      <li><a href="/work" class="block p-2 hover:underline">Work</a></li>
-      <li><a href="/blog" class="block p-2 hover:underline {% if segment1 == "blog" %} text-red-600" aria-current="page{% endif %}">Blog</a></li>
-      {% for page in pages %}
+    <ul class="sm:flex font-bold text-lg">
+      <li><a href="#about" class="block p-2 hover:underline">About</a></li>
+      <li><a href="#work" class="block p-2 hover:underline">Work</a></li>
+      <li><a href="#contact" class="block p-2 hover:underline">Contact</a></li>
+
+      {#% for page in pages %}
         <li><a href="{{ page.url }}" class="block p-2 hover:underline hover:text-red-600{% if segment1 == page.slug %} text-red-600" aria-current="page{% endif %}">{{ page.title }}</a></li>
-      {% endfor %}
+      {% endfor %#}
     </ul>
   </nav>
   

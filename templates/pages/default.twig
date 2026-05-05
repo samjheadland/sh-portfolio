@@ -3,7 +3,7 @@
 {% block content %}
 
 	<div class="container text-white mx-auto">
-		<div class="grid grid-cols-2 py-10 gap-6 items-center">
+		<div class="grid grid-cols-2 py-20 gap-6">
 			<div class=" gap-4 py-10">
 				<h1 class="font-bold text-4xl">{{ entry.title }}</h1>
 				<p class="mt-4">{{ entry.pageSubheading }}</p>
@@ -26,7 +26,7 @@
 
 			<div class="">
 				{% if entry.image %}
-					<figure class="h-120 rounded-xl overflow-hidden">
+					<figure class="h-100 rounded-xl overflow-hidden">
 						{% set assets = entry.image.eagerly().one() %}
 						{% if assets %}
 							<img class="w-full h-full object-cover" src="{{ assets.url('hero') }}" alt="{{ assets.alt }}"/>

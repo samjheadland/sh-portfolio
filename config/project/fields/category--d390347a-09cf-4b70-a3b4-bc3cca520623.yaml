@@ -5,15 +5,20 @@ name: Category
 searchable: false
 settings:
   allowSelfRelations: false
-  branchLimit: 1
-  maintainHierarchy: true
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
   maxRelations: null
   minRelations: null
   selectionLabel: 'Add category'
   showCardsInGrid: false
-  showSiteMenu: false
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedEntries: true
+  showUnpermittedSections: true
   sources:
     - 'section:70b2614b-639a-4de2-8c11-3851d36d6f8c' # Blog Categories
+    - 'section:0f01ea77-fdfb-4253-90a1-dbfc5029ccc5' # Work Categories
   targetSiteId: null
   validateRelatedElements: false
   viewMode: list

@@ -1,4 +1,4 @@
-dateModified: 1777900610
+dateModified: 1778023789
 elementSources:
   craft\elements\Entry:
     -
@@ -101,6 +101,19 @@ elementSources:
         - link
       type: native
     -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:0f01ea77-fdfb-4253-90a1-dbfc5029ccc5' # Work Categories
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
       heading: Everything
       key: 'heading:e5977751-e633-44a2-9788-1c7a186a46a3'
       type: heading
@@ -134,6 +147,10 @@ elementSources:
     -
       heading: ''
       key: 'heading:61995482-c5cc-4ad7-85c7-89981751c652'
+      type: heading
+    -
+      heading: ''
+      key: 'heading:96be7f8a-a4f3-4323-94b8-a673ec2de797'
       type: heading
 email:
   fromEmail: travis@pixelandtonic.com
