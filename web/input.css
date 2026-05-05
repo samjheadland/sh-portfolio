@@ -36,3 +36,6 @@ html {
 .btn {
     @apply py-2 px-4 inline-block border-1 rounded-xl;
 }
+.container {
+    @apply mx-auto px-4;
+}

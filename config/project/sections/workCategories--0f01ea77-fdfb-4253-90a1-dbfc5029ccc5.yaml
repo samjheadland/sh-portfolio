@@ -2,13 +2,13 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 697da4c2-e02f-4f49-9d76-e22609ceda25 # Page
-handle: work
+    uid: 5dd08fc8-3ea4-4582-952f-4c0f7ebf409e # Category
+handle: workCategories
 maxAuthors: 1
-name: Work
+name: 'Work Categories'
 previewTargets:
   -
-    label: Index
+    label: 'Primary entry page'
     refresh: '1'
     urlFormat: '{url}'
 propagationMethod: all
@@ -17,5 +17,8 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: _pages.twig
-    uriFormat: work
-type: single
+    uriFormat: 'work-categories/{slug}'
+structure:
+  maxLevels: null
+  uid: b4b2ba4b-5c4e-4893-b09d-95082b403070
+type: structure

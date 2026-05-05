@@ -1,4 +1,4 @@
-dateModified: 1776979312
+dateModified: 1777900610
 elementSources:
   craft\elements\Entry:
     -
@@ -23,6 +23,7 @@ elementSources:
       type: custom
     -
       heading: Pages
+      key: 'heading:7e2abdd8-d358-403f-b59e-e7a83d983637'
       type: heading
     -
       condition:
@@ -34,8 +35,8 @@ elementSources:
             uid: 5690305a-9541-42b2-9e20-e0f68d6f7e30
             values:
               - 998bf681-e007-4f7e-a525-863e01a38560 # Blog Index
-              - aef20f9c-5c84-4c50-8a18-acf0452db62f
               - cdad2202-5d55-49ba-995e-962503f5887f # Home
+              - efe8176c-597e-4441-94e6-0835d134f864 # Work
         elementType: craft\elements\Entry
         fieldContext: global
       defaultSort:
@@ -59,6 +60,7 @@ elementSources:
       type: native
     -
       heading: Channels
+      key: 'heading:72b94c18-c871-4384-8e4e-6bddecbc7170'
       type: heading
     -
       defaultSort:
@@ -91,13 +93,16 @@ elementSources:
         - desc
       defaultViewMode: ''
       disabled: false
-      key: 'section:3e2a1a6f-88ea-477b-936d-39393f2d594f'
+      key: 'section:f45cede3-bdf2-4bb8-8dc6-efd0ed4da42c' # Work Posts
       tableAttributes:
         - status
         - postDate
+        - expiryDate
+        - link
       type: native
     -
       heading: Everything
+      key: 'heading:e5977751-e633-44a2-9788-1c7a186a46a3'
       type: heading
     -
       defaultSort:
@@ -124,6 +129,11 @@ elementSources:
       type: native
     -
       heading: ''
+      key: 'heading:0caa3c15-c1b8-4357-9a61-12493fbfdb4e'
+      type: heading
+    -
+      heading: ''
+      key: 'heading:61995482-c5cc-4ad7-85c7-89981751c652'
       type: heading
 email:
   fromEmail: travis@pixelandtonic.com
@@ -143,6 +153,7 @@ fs:
 meta:
   __names__:
     0a58e287-e038-4eb7-ab2a-cf4cbdbe013d: 'Page content' # Page content
+    0f01ea77-fdfb-4253-90a1-dbfc5029ccc5: 'Work Categories' # Work Categories
     2b829e15-a7bd-4ab0-9050-dcdfe44499cf: 'Public Schema' # Public Schema
     2bae9725-9546-4f55-a889-56102191aa89: Navigation # Navigation
     5dd08fc8-3ea4-4582-952f-4c0f7ebf409e: Category # Category
@@ -175,7 +186,7 @@ meta:
     d4f0917b-edcf-4ef0-a98b-661ff27384ad: Page # Page
     d55d172f-8b8f-4bb7-b680-31249981c350: Global # Global
     d390347a-09cf-4b70-a3b4-bc3cca520623: Category # Category
-    efe8176c-597e-4441-94e6-0835d134f864: 'Work Index' # Work Index
+    efe8176c-597e-4441-94e6-0835d134f864: Work # Work
     f45cede3-bdf2-4bb8-8dc6-efd0ed4da42c: 'Work Posts' # Work Posts
     f7576aa3-c155-4b54-82c9-8cb8c93495c9: Callout # Callout
 plugins:

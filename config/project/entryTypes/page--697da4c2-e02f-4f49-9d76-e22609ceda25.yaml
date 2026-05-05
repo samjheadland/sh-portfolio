@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   c89336c4-080e-4733-8042-a2fe82bb0884:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -37,6 +39,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-21T04:29:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6d2e5577-5ded-43c9-96e2-d4fc4c770fe9 # Text
             handle: pageSubheading
@@ -53,6 +56,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T09:36:26+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6c9778b8-507c-4108-937d-6ceeabf35047 # Image
             handle: null
@@ -69,6 +73,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-27T07:20:15+00:00'
+            editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
               conditionRules:
@@ -95,6 +100,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-08-20T09:36:26+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 0a58e287-e038-4eb7-ab2a-cf4cbdbe013d # Page content
             handle: null
@@ -120,6 +126,6 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
