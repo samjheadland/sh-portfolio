@@ -1,14 +1,63 @@
-{% extends "pages/default" %}
+{% extends "_layouts/default" %}
 {% import '_utilities/teaser' as article %}
 
-{#% block landing %}
-  <section class="">
-    <div class="container mx-auto divide-y divide-slate-300 py-12 px-2">
-      <h2 class="font-bold text-4xl mb-2">Other articles</h2>
-      {% set posts = craft.entries.section('workPosts').id('not ' ~ entry.id).limit(3).all() %}
-      {% for post in posts %}
-        {{ article.teaser({post: post}) }}
-      {% endfor %}    
-    </div>
-  </section>
-{% endblock %#}
+{% block content %}
+<div class="container">
+<div class="grid grid-cols-2 py-20 gap-6 items-center">
+			<div class=" gap-4 py-10">
+				<h1 class="font-bold text-4xl text-white">{{ entry.title }}</h1>
+				<p class="mt-4">{{ entry.pageSubheading }}</p>
+
+				{% if entry.section.handle == 'blogPosts' or entry.section.handle == 'workPosts' %}
+					<div class=" text-white mt-4">
+						{% set categories = entry.category.eagerly().all() %}
+			{% for category in categories %}
+				<span class="text-sm font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5">{{ category.title }}</span>
+			{% endfor %}
+						
+						<!--<p class="text-xs">By
+							{{ entry.author.fullName }}</p>-->
+					</div>
+				{% endif %}
+
+			</div>
+
+			<div class="">
+				{% if entry.image %}
+					<figure class="h-100 rounded-xl overflow-hidden">
+						{% set assets = entry.image.eagerly().one() %}
+						{% if assets %}
+							<img class="w-full h-full object-cover" src="{{ assets.url('hero') }}" alt="{{ assets.alt }}"/>
+						{% endif %}
+					</figure>
+				{% endif %}
+			</div>
+
+
+		</div>
+</div>
+	<div class="container mx-auto px-4 py-12 text-white max-w-3xl">
+
+	<!--	<a href="/work" class="inline-flex items-center gap-2 text-sm text-accent/70 hover:text-accent transition-colors mb-8 no-underline">
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+			Back to work
+		</a>-->
+
+		<section class="page__content prose prose-invert max-w-none">
+			{{ entry.pageContent }}
+		</section>
+
+	</div>
+
+	{#% block landing %}
+		<div class="container mx-auto px-4 py-16 border-t border-white/10">
+			<h2 class="font-bold text-2xl mb-6 text-white">More work</h2>
+			<div class="grid sm:gap-6">
+				{% set posts = craft.entries.section('workPosts').id('not ' ~ entry.id).limit(3).all() %}
+				{% for post in posts %}
+					{{ article.teaser({post: post, featured: true}) }}
+				{% endfor %}
+			</div>
+		</div>
+	{% endblock %#}
+{% endblock %}
