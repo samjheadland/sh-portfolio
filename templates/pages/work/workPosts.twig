@@ -2,21 +2,22 @@
 {% import '_utilities/teaser' as article %}
 
 {% block content %}
-<div class="container">
-<div class="grid grid-cols-2 py-20 gap-6 items-center">
+<section class="container bg-white rounded-4xl">
+	<div class="">
+		<div class="grid grid-cols-2 py-20 gap-6 items-center">
 			<div class=" gap-4 py-10">
-				<h1 class="font-bold text-4xl text-white">{{ entry.title }}</h1>
+				<h1 class="font-bold text-4xl">{{ entry.title }}</h1>
 				<p class="mt-4">{{ entry.pageSubheading }}</p>
 
 				{% if entry.section.handle == 'blogPosts' or entry.section.handle == 'workPosts' %}
 					<div class=" text-white mt-4">
 						{% set categories = entry.category.eagerly().all() %}
-			{% for category in categories %}
-				<span class="text-sm font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5">{{ category.title }}</span>
-			{% endfor %}
-						
+						{% for category in categories %}
+							<span class="text-sm font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5">{{ category.title }}</span>
+						{% endfor %}
+
 						<!--<p class="text-xs">By
-							{{ entry.author.fullName }}</p>-->
+													{{ entry.author.fullName }}</p>-->
 					</div>
 				{% endif %}
 
@@ -35,29 +36,57 @@
 
 
 		</div>
-</div>
-	<div class="container mx-auto px-4 py-12 text-white max-w-3xl">
+	</div>
+	<div
+		class="container mx-auto px-4 py-12">
 
-	<!--	<a href="/work" class="inline-flex items-center gap-2 text-sm text-accent/70 hover:text-accent transition-colors mb-8 no-underline">
-			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-			Back to work
-		</a>-->
+		<!--	<a href="/work" class="inline-flex items-center gap-2 text-sm text-accent/70 hover:text-accent transition-colors mb-8 no-underline">
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+					Back to work
+				</a>-->
 
-		<section class="page__content prose prose-invert max-w-none">
-			{{ entry.pageContent }}
+		<section class="page__content prose prose-invert max-w-none gap-4">
+		<div class="flex flex-col gap-6">
+			{% for block in entry.contentBuilder.all() %}
+				{% if block.type.handle == 'text' %}
+					<div class="content-block text-block">
+						{{ block.pageContent }}
+
+					</div>
+				{% elseif block.type.handle == 'image' %}
+					<div class="content-block image-block">
+						{% set image = block.image.one() %}
+						{% if image %}
+							<figure>
+								<img src="{{ image.url }}" alt="{{ image.alt }}"/>		
+							</figure>
+						{% endif %}
+					</div>
+				{% elseif block.type.handle == 'video' %}
+					<div class="content-block video-block">
+						{{ block.embedCode | raw }}
+					</div>
+				{% elseif block.type.handle == 'callout' %}
+					<div class="content-block callout-block border-l-4 border-accent pl-4">
+						{{ block.pageContent }}
+					</div>
+				{% endif %}
+			{% endfor %}
+
+		</div>
 		</section>
 
 	</div>
-
+</section>
 	{#% block landing %}
-		<div class="container mx-auto px-4 py-16 border-t border-white/10">
-			<h2 class="font-bold text-2xl mb-6 text-white">More work</h2>
-			<div class="grid sm:gap-6">
-				{% set posts = craft.entries.section('workPosts').id('not ' ~ entry.id).limit(3).all() %}
-				{% for post in posts %}
-					{{ article.teaser({post: post, featured: true}) }}
-				{% endfor %}
+			<div class="container mx-auto px-4 py-16 border-t border-white/10">
+				<h2 class="font-bold text-2xl mb-6 text-white">More work</h2>
+				<div class="grid sm:gap-6">
+					{% set posts = craft.entries.section('workPosts').id('not ' ~ entry.id).limit(3).all() %}
+					{% for post in posts %}
+						{{ article.teaser({post: post, featured: true}) }}
+					{% endfor %}
+				</div>
 			</div>
-		</div>
-	{% endblock %#}
+		{% endblock %#}
 {% endblock %}

@@ -10,7 +10,9 @@ body {
 html {
     font-family:  "Plus Jakarta Sans", sans-serif !important;
 }
-
+p {
+    @apply text-[18px] leading-[30px] text-[#e8f0f7] mb-3;
+}
 @theme {
   --color-darkblue: #122C38;
   --color-darkblue-100: #1A3A50;
@@ -38,4 +40,8 @@ html {
 }
 .container {
     @apply mx-auto px-4;
+}
+
+.prose>ul {
+    @apply list-disc list-inside;
 }

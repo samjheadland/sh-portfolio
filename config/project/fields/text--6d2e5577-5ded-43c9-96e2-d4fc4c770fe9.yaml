@@ -4,13 +4,39 @@ instructions: null
 name: Text
 searchable: true
 settings:
-  byteLimit: null
-  charLimit: null
-  code: false
-  initialRows: 4
-  multiline: false
-  placeholder: null
-  uiMode: normal
+  availableTransforms: '*'
+  availableVolumes: '*'
+  characterLimit: null
+  ckeConfig: b579b454-12bd-4710-a436-c26907141957 # Full
+  createButtonLabel: null
+  defaultTransform: null
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - a06e695e-af7f-4a1b-84a7-575ec935e293 # Video
+    -
+      __assoc__:
+        -
+          - uid
+          - 5358db38-27c0-49b4-b9d3-e68326e79da2 # Image
+    -
+      __assoc__:
+        -
+          - uid
+          - f7576aa3-c155-4b54-82c9-8cb8c93495c9 # Callout
+  expandEntryButtons: false
+  fullGraphqlData: true
+  parseEmbeds: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
+  wordLimit: null
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\PlainText
+type: craft\ckeditor\Field

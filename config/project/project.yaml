@@ -1,4 +1,4 @@
-dateModified: 1778023789
+dateModified: 1778269484
 elementSources:
   craft\elements\Entry:
     -
@@ -191,6 +191,7 @@ meta:
     998bf681-e007-4f7e-a525-863e01a38560: 'Blog Index' # Blog Index
     1509c810-f47f-4959-be70-3d5f20b09814: Hero # Hero
     5358db38-27c0-49b4-b9d3-e68326e79da2: Image # Image
+    7148b76c-b42b-4df1-aa4a-979693990aa4: 'Content Builder' # Content Builder
     0922209d-2911-419e-82cf-b05113a35f6e: Wide # Wide
     a06e695e-af7f-4a1b-84a7-575ec935e293: Video # Video
     b5b7bfc5-a39e-4d1a-89be-51f0afeb5ce0: Avatar # Avatar
