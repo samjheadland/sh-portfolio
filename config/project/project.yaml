@@ -1,4 +1,4 @@
-dateModified: 1778269484
+dateModified: 1780406258
 elementSources:
   craft\elements\Entry:
     -
@@ -217,5 +217,5 @@ system:
   live: true
   name: 'Blog Starter'
   retryDuration: null
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.10.0.0
   timeZone: America/Los_Angeles

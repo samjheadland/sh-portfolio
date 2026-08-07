@@ -7,3 +7,5 @@ scope:
   - 'sections.3e2a1a6f-88ea-477b-936d-39393f2d594f:create'
   - 'sections.3e2a1a6f-88ea-477b-936d-39393f2d594f:save'
   - 'sections.3e2a1a6f-88ea-477b-936d-39393f2d594f:delete'
+  - 'directive:parseRefs'
+  - 'directive:transform'

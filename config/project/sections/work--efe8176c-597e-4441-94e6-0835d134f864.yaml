@@ -5,6 +5,7 @@ entryTypes:
     uid: 697da4c2-e02f-4f49-9d76-e22609ceda25 # Page
 handle: work
 maxAuthors: 1
+minAuthors: 1
 name: Work
 previewTargets:
   -

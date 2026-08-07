@@ -51,7 +51,7 @@
 				<h2 class="font-extrabold text-white text-[clamp(1.8rem,3.5vw,3rem)] tracking-[-0.03em]">Work</h2>
 				<span class="text-sm font-semibold text-accent/80 hover:text-accent flex items-center gap-1.5 cursor-pointer transition-colors">All projects →</span>
 			</div>
-			<div class="grid grid-cols-2 sm:gap-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 sm:gap-6">
 				{% for post in posts %}
 					{{ article.teaser({post: post, featured: true}) }}
 				{% endfor %}
