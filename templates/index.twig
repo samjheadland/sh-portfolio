@@ -1,7 +1,7 @@
 {% set entry = craft.entries.slug('home').one() %}
 {% extends "pages/default" %}
 {% import '_utilities/teaser' as article %}
-{% set postQuery = craft.entries.section('workPosts').limit(2) %}
+{% set postQuery = craft.entries.section('workPosts').limit(4) %}
 {% paginate postQuery as pageInfo, posts %}
 
 	{% block content %}
