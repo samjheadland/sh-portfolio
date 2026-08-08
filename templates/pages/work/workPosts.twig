@@ -2,9 +2,9 @@
 {% import '_utilities/teaser' as article %}
 
 {% block content %}
-<section class="container bg-white rounded-4xl">
+<section class="container !p-0 bg-white rounded-4xl">
 	<div class="">
-		<div class="grid grid-cols-2 py-20 gap-6 items-center">
+		<div class="grid grid-cols-2 p-8 gap-6 items-center">
 			<div class=" gap-4 py-10">
 				<h1 class="font-bold text-4xl">{{ entry.title }}</h1>
 				<p class="mt-4">{{ entry.pageSubheading }}</p>
@@ -37,6 +37,8 @@
 
 		</div>
 	</div>
+
+	</section>
 	<div
 		class="container mx-auto px-4 py-12">
 
@@ -49,7 +51,7 @@
 		<div class="flex flex-col gap-6">
 			{% for block in entry.contentBuilder.all() %}
 				{% if block.type.handle == 'text' %}
-					<div class="content-block text-block">
+					<div class="content-block text-block text-white">
 						{{ block.pageContent }}
 
 					</div>
