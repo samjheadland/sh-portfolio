@@ -52,7 +52,9 @@
 			{% for block in entry.contentBuilder.all() %}
 				{% if block.type.handle == 'text' %}
 					<div class="content-block text-block text-white">
-						{{ block.pageContent }}
+						{# Prefer `block.pageContent` if authors used an HTML/CKEditor field; otherwise fall back to the plain text field #}
+						{% set pageContent = (block.pageContent is defined and block.pageContent) ? block.pageContent : (block.textBlock is defined ? block.textBlock|md : '') %}
+						<div class="prose prose-invert">{{ pageContent|raw }}</div>
 
 					</div>
 				{% elseif block.type.handle == 'image' %}
