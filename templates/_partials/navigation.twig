@@ -1,10 +1,9 @@
   {% set pages = craft.entries.section('pages').level(1).all() %}
-  <button type="button" class="sm:hidden relative z-50 p-2" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
+  <button type="button" class="nav-toggle sm:hidden relative z-50 p-2" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
     <span class="sr-only">Menu</span>
-    <svg class="w-7 h-7" data-nav-icon="open" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    <svg class="w-7 h-7 hidden" data-nav-icon="close" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
-  <nav id="primary-nav" class="hidden fixed inset-0 z-40 items-center justify-center bg-darkblue sm:static sm:block sm:bg-transparent" aria-label="Primary">
+  <nav id="primary-nav" class="nav-overlay" aria-label="Primary">
     <ul class="sm:flex font-bold text-3xl sm:text-lg text-center sm:text-left space-y-4 sm:space-y-0">
       <li><a href="#about" class="block p-2 hover:underline">About</a></li>
       <li><a href="/work" class="block p-2 hover:underline">Work</a></li>
@@ -21,11 +20,8 @@
       var nav = document.getElementById('primary-nav');
       function setOpen(open) {
         toggle.setAttribute('aria-expanded', open);
-        nav.classList.toggle('hidden', !open);
-        nav.classList.toggle('flex', open);
+        nav.toggleAttribute('data-open', open);
         document.body.classList.toggle('overflow-hidden', open);
-        toggle.querySelector('[data-nav-icon="open"]').classList.toggle('hidden', open);
-        toggle.querySelector('[data-nav-icon="close"]').classList.toggle('hidden', !open);
       }
       toggle.addEventListener('click', function () {
         setOpen(toggle.getAttribute('aria-expanded') !== 'true');
