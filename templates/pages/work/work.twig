@@ -8,7 +8,7 @@
 {% block landing %}
 
   <section class="container mx-auto mb-6 px-2 divide-y divide-slate-300">
-    <div class="grid grid-cols-2 sm:gap-6">
+    <div class="grid grid-cols-2 gap-6">
       {% for post in posts %}
         {{ article.teaser({post: post, featured: true}) }}
       {% endfor %}
