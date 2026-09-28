@@ -11,7 +11,7 @@ html {
     font-family:  "Plus Jakarta Sans", sans-serif !important;
 }
 p {
-    @apply text-[18px] leading-[30px] text-[#e8f0f7] mb-3;
+    @apply text-[18px] leading-[30px]  mb-3;
 }
 @theme {
   --color-darkblue: #122C38;
@@ -20,7 +20,6 @@ p {
 
 
     --color-navy: #0d2233;
-    
     --color-navy-mid: #14304a;
     --color-navy-card: #1a3a50;
     --color-navy-light: #1e4060;
