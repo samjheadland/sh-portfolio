@@ -13,6 +13,7 @@ html {
 p {
     @apply text-[18px] leading-[30px]  mb-3;
 }
+
 @theme {
   --color-darkblue: #122C38;
   --color-darkblue-100: #1A3A50;
@@ -37,6 +38,9 @@ p {
 
 .btn {
     @apply py-2 px-4 inline-block border-1 rounded-xl;
+}
+.btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3 bg-accent text-navy rounded-full font-semibold text-sm hover:-translate-y-0.5 hover:shadow-[0_8px_24px_color-mix(in_srgb,#4ec9a0_25%,transparent)] transition-all no-underline;
 }
 .container {
     @apply mx-auto px-4;
