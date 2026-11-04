@@ -4,10 +4,10 @@
     <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
   </button>
   <nav id="primary-nav" class="nav-overlay" aria-label="Primary">
-    <ul class="sm:flex font-bold text-3xl sm:text-lg text-center sm:text-left space-y-4 sm:space-y-0">
-      <li><a href="#about" class="block p-2 hover:underline">About</a></li>
-      <li><a href="/work" class="block p-2 hover:underline">Work</a></li>
-      <li><a href="#contact" class="block p-2 hover:underline">Contact</a></li>
+    <ul class="sm:flex font-bold text-3xl sm:text-lg text-center sm:text-left space-y-4 sm:space-y-0 gap-4">
+      <!--<li><a href="#about" class="block p-2 hover:underline">About</a></li>-->
+      <li><a href="#work" class="block p-2 hover:underline">Work</a></li>
+      <li><a href="#contact" class="btn btn-primary">Contact</a></li>
 
       {#% for page in pages %}
         <li><a href="{{ page.url }}" class="block p-2 hover:underline hover:text-red-600{% if segment1 == page.slug %} text-red-600" aria-current="page{% endif %}">{{ page.title }}</a></li>

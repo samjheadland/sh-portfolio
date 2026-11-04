@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @import "tailwindcss";
+@source not "./output.css";
 
 
 
@@ -10,8 +11,36 @@ body {
 html {
     font-family:  "Plus Jakarta Sans", sans-serif !important;
 }
-p {
-    @apply text-[18px] leading-[30px]  mb-3;
+
+/* Typography — in the base layer so utility classes in templates can override */
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-balance;
+    }
+    h1 {
+        @apply text-4xl leading-[1.1] mb-6 md:text-5xl lg:text-6xl;
+    }
+    h2 {
+        @apply text-2xl mb-4 md:text-3xl lg:text-4xl;
+    }
+    h3 {
+        @apply text-xl mb-3 md:text-2xl;
+    }
+    h4 {
+        @apply text-lg mb-3 md:text-xl;
+    }
+    h5 {
+        @apply text-base leading-normal mb-2;
+    }
+    h6 {
+        @apply text-sm leading-normal mb-2 uppercase tracking-[0.18em];
+    }
+    p {
+        @apply text-base leading-7 mb-3 md:text-[18px] md:leading-[30px];
+    }
+    small {
+        @apply text-sm;
+    }
 }
 
 @theme {

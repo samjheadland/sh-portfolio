@@ -3,10 +3,10 @@
 
 {% block content %}
 	<section class="container">
-		<div class="bg-white rounded-4xl">
+		<div class="bg-darkblue-100 rounded-4xl">
 			<div class="grid grid-cols-1 md:grid-cols-2 p-8 gap-6 items-center">
 				<div class=" gap-4 py-10">
-					<h1 class="font-bold text-4xl">{{ entry.title }}</h1>
+					<h1 class="font-bold text-white text-4xl">{{ entry.title }}</h1>
 					<p class="mt-4">{{ entry.pageSubheading }}</p>
 
 					{% if entry.section.handle == 'blogPosts' or entry.section.handle == 'workPosts' %}
@@ -52,8 +52,9 @@
 				{% for block in entry.contentBuilder.all() %}
 					{% if block.type.handle == 'text' %}
 						<div class="content-block text-block text-white">				
-							
+							<div class="my-4">
 							<a href="{{ entry.websiteUrl }}" class="btn btn-primary">Visit website</a>
+							</div>
 							{# Prefer `block.pageContent` if authors used an HTML/CKEditor field; otherwise fall back to the plain text field #}
 							{% set pageContent = (block.pageContent is defined and block.pageContent) ? block.pageContent : (block.textBlock is defined ? block.textBlock|md : '') %}
 							<div class="prose prose-invert">{{ pageContent|raw }}</div>
