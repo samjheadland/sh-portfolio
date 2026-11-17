@@ -37,18 +37,18 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-08-21T04:29:15+00:00'
+            dateAdded: '2026-11-13T19:20:51+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 6d2e5577-5ded-43c9-96e2-d4fc4c770fe9 # Text
-            handle: pageSubheading
+            fieldUid: 6d48bd78-b37f-440a-a42f-06279a53f31f # Sub Heading
+            handle: null
             instructions: null
-            label: 'Page subheading'
+            label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 225541d2-66a5-4775-958a-af5304fa9875
+            uid: 18fde9fb-7a94-4c12-ad8c-707e27929560
             userCondition: null
             warning: null
             width: 100
