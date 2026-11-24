@@ -3,10 +3,10 @@
 
 {% block content %}
 	<section class="container">
-		<div class="bg-darkblue-100 rounded-4xl">
-			<div class="grid grid-cols-1 md:grid-cols-2 p-8 gap-6 items-center">
+		<div class="">
+			<div class="grid grid-cols-1 md:grid-cols-2 py-8 gap-6 items-center">
 				<div class=" gap-4 py-10">
-					<h1 class="font-bold text-white text-4xl">{{ entry.title }}</h1>
+					<h1 class="font-bold text-white">{{ entry.title }}</h1>
 					<p class="text-white">{{ entry.subHeading }}</p>
 
 					{% if entry.section.handle == 'blogPosts' or entry.section.handle == 'workPosts' %}
@@ -16,14 +16,16 @@
 								<span class="text-sm font-medium px-3.5 py-1.5 border border-accent/20 rounded-full text-text-muted bg-accent/5">{{ category.title }}</span>
 							{% endfor %}
 
-							<!--<p class="text-xs">By
-													{{ entry.author.fullName }}</p>-->
+							<!--<p class="text-xs">By {{ entry.author.fullName }}</p>-->
 						</div>
 					{% endif %}
 
 				</div>
 
-				<div class="">
+
+			</div>
+
+			<!--<div class="">
 					{% if entry.image %}
 						<figure class="h-100 rounded-xl overflow-hidden">
 							{% set assets = entry.image.eagerly().one() %}
@@ -33,9 +35,7 @@
 						</figure>
 					{% endif %}
 				</div>
-
-
-			</div>
+				-->
 		</div>
 
 	</section>
